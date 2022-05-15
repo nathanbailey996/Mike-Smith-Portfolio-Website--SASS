@@ -1,0 +1,59 @@
+@import "./variables";
+
+
+.contact-section{
+    @include flexCenter(column); 
+    height:max-content;
+    padding:4rem 0; 
+    min-height: 0px;
+}
+.form{
+    @include flexCenter(column); 
+    width:80%; 
+   margin-top:1rem; 
+   @include maxWidth;
+
+   & label {
+       width:100%; 
+       font-size: 1.2rem;
+       font-weight: 100;
+       margin:0.5rem 0;
+   }
+
+   & input{
+       width:100%;
+       border:none; 
+       border-radius:3px;
+       height:2rem;
+       color:$dark-grey-color;
+       padding:0 0.1rem;
+       display: flex;
+       align-items: flex-start;
+   }
+
+   & .submit-btn{
+font-size: 1rem;
+margin-top:1rem; 
+background-color: $orange-color;
+padding:0.5rem 1rem; 
+border-radius:5px;
+   }
+   & .submit-btn:hover{
+color:$dark-grey-color; 
+transform:scale(1.05);
+@include transition;
+
+   }
+
+}
+
+#message{
+    padding-bottom:22vh;
+    padding-top:0.7rem;
+ 
+
+}
+
+.error{
+    outline:solid red 2px;
+}

@@ -1,0 +1,90 @@
+@import "./variables";
+
+.main{
+    @include fullScreen;
+    background-image: url("https://raw.githubusercontent.com/codeSTACKr/portfolio-sass/master/dist/img/model-1.jpg");
+    @include backgroundImage;
+}
+
+@include Minresponsive(1500px){
+    .main{
+        background-position: left 0%;
+    }
+}
+
+.home-page{
+    @include fullScreen;
+    @include flexCenter(row);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.home-page-content{
+    width: 100vw;
+    @include flexCenter(column);
+
+    & p{
+        font-size:$p-font-size;
+        letter-spacing: 1px;
+    }
+
+ 
+    
+}
+
+.hamburger-menu-btn{
+    position:absolute;
+    top:0; 
+    right:0; 
+    padding:0.5rem; 
+    font-size: 1.8rem; 
+}
+.open-nav-btn{
+    z-index: 999;
+    
+}
+
+@include Minresponsive(1000px){
+    .hamburger-menu-btn{
+        display: none;
+    }
+}
+.hover-orange-icon{
+    @include hoverOrange;
+}
+
+
+.hamburger-menu-item-active{
+    transition:all 500ms ease;
+    transform:rotate(360deg);
+    z-index: 1;
+}
+
+.name-container{
+width:100vw; 
+border-bottom:solid white 2px;
+@include flexCenter(column);
+margin-bottom: 0.5rem;
+
+    & h1{
+        font-size: 4rem;
+        font-weight: 200;
+    }
+    & h1 span{
+        color:$orange-color;
+        font-weight: 800;
+    }
+}
+
+.socials-container{
+    @include flexCenter(column);
+    position:fixed; 
+    bottom:0;
+    left:0;
+    margin:0.5rem;
+}
+
+.social-btn{
+    font-size: 1.8rem;
+    padding:0.3rem;
+    @include hoverOrange;
+}

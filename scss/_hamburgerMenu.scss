@@ -1,0 +1,69 @@
+@import "./variables";
+
+@include MAxresponsive(1000px){
+    .hamburger-menu{
+        @include fullScreen;
+        @include flexCenter(column);
+        position:fixed; 
+        top:0;
+        transform:translateY(-2000px);
+        right:0;
+        background-color:$dark-grey-color ;
+        z-index:99;
+        transition: all 400ms ease;
+    
+        & ul{
+            @include flexCenter(column);
+        }        
+    }
+
+    .hamburger-menu-active{
+        transform:translateY(0px);
+        transition: all 300ms ease;
+        display: flex;
+    }
+    .ham-menu-item{
+        opacity:0; 
+        transform:translateX(50rem);
+        transition:all 300ms ease; 
+    }
+    
+    .ham-menu-item-active{
+        opacity:1; 
+        transform:translateX(0rem); 
+    }
+    
+    @for $i from 1 through 4 {
+        .ham-menu-item:nth-child(#{$i}){
+            transition-delay: ($i * 100ms) + 150ms;
+        }
+    }
+}
+
+
+
+.ham-menu-link{
+    font-size: 1.5rem;
+    font-weight: 100;
+    opacity: 0.9;
+    padding:1rem 2rem;
+    @include hoverOrange;
+}
+
+@include Minresponsive(1000px){
+    .hamburger-menu{
+        position: absolute;
+        top:0;
+        right:0;
+        & ul{
+            display: flex;
+        }
+    }
+}
+
+
+
+
+
+
+

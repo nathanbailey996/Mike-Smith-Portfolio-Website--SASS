@@ -1,0 +1,50 @@
+$font-family:Arial, Helvetica, sans-serif;
+$orange-color:#ff652f; 
+$white:#fff; 
+$p-font-size:1rem;
+$dark-grey-color:#3d3939;
+
+
+@mixin fullScreen{
+    height:100vh; 
+    width:100vw;
+}
+
+@mixin flexCenter($flex-direction) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $flex-direction;
+}
+
+@mixin hoverOrange{
+    &:hover{
+        color:$orange-color;
+        transition:all 200ms ease;
+    }
+}
+
+@mixin backgroundImage{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin transition{
+    transition:all 500ms ease;
+}
+
+@mixin maxWidth{
+    max-width:50rem;
+}
+
+@mixin Minresponsive($width){
+    @media(min-width:$width ){
+        @content;
+    }
+}
+@mixin MAxresponsive($width){
+    @media(max-width:$width ){
+        @content;
+    }
+}
